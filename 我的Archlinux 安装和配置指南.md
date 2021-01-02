@@ -159,6 +159,24 @@ yay -S jdk11-openjdk jdk8-openjdk nodejs npm maven mariadb
 
 ```
 
+## 9.问题解决
+
+### 1.dwm下idea灰屏
+
+安装wmname
+
+```
+yay -S wmname
+```
+
+编辑 *~/.xinitrc* ,在第二行开始加入:
+
+```
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
+wmname LG3D
+```
+
 
 
 
