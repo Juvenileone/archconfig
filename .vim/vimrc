@@ -1,0 +1,77 @@
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+
+set cursorline
+
+set autoindent
+set ai!
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set wrap
+
+set wildmenu
+set showcmd
+
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
+
+set tabstop=4
+
+set ruler
+set whichwrap=b,s,<,>,[,]
+set spell
+set undofile
+set nocompatible
+set autoread
+set nu
+set showmatch
+
+map sl :set nosplitright<CR>:vsplit
+map sh :set splitright<CR>:vsplit
+map sj :set splitbelow<CR>:split
+map sk :set nosplitbelow<CR>:split
+
+let mapleader="\<space>"
+map <LEADER>h <C-w>h
+map <LEADER>l <C-w>l
+map <LEADER>j <C-w>j
+map <LEADER>k <C-w>i
+
+map 8 :res +5<CR>
+map 2 :res -5<CR>
+map 4 :vertical resize-5<CR>
+map 6 :vertical resize+5<CR>
+
+au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+map R :source $MYVIMRC<CR>
+map W :w<CR>
+
+
+map tt :NERDTreeToggle<CR>
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'rakr/vim-one'
+Plug 'preservim/nerdtree'
+Plug 'dense-analysis/ale'
+Plug 'iamcco/markdown-preview.nvim'
+
+call plug#end()
+
+colorscheme one
+set background=dark
+hi Normal ctermfg=252 ctermbg=none
