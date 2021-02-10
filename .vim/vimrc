@@ -57,8 +57,6 @@ au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 map R :source $MYVIMRC<CR>
-map W :w<CR>
-
 
 map tt :NERDTreeToggle<CR>
 

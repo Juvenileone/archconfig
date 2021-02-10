@@ -1,3 +1,3 @@
 function clean 
-	sudo pacman -Rns \$(pacman -Qtdq) $argv
+	sudo pacman -Rns (pacman -Qtdq) $argv
 end

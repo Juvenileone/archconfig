@@ -109,6 +109,7 @@ alias 2screen="xrandr --output HDMI-1-2 --mode 1280x800 --left-of eDP-1  --pos 2
 alias 2screen-off="xrandr --output HDMI-1-2 --off &&~/scripts/wallpaper_feh.sh &"
 alias tomcat-start="sudo /opt/apache-tomcat-9.0.39/bin/startup.sh"
 alias tomcat-shutdown="sudo /opt/apache-tomcat-9.0.39/bin/shutdown.sh"
+alias vnc="x0vncserver -rfbport=5900 -SecurityTypes=None"
 
 export PATH=~/.pyenv/bin:$PATH
 export PYENV_ROOT=~/.pyenv
